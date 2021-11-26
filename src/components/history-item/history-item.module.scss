@@ -1,0 +1,35 @@
+.item {
+  display: flex;
+  width: 50%;
+  font-size: 18px;
+  line-height: 23px;
+  padding-top: 11px;
+  padding-bottom: 12px;
+
+  &:nth-child(n+6) {
+    justify-content: flex-end;
+    padding-right: 12px;
+  }
+}
+
+.date {
+  margin-right: 41px;
+}
+
+.from {
+  width: 143px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 7px;
+    width: 49px;
+    height: 27px;
+    background-image: url('../../images/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto; 
+  }
+}

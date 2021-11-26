@@ -1,0 +1,100 @@
+.promo {
+  display: flex;
+  min-height: 400px;
+  background-color: var(--color-active);
+  background: linear-gradient(
+    180.24deg,
+    var(--color-active) 32.89%,
+    #2027B3 99.79%
+  );
+}
+
+.wrapper {
+  display: flex;
+  width: 1366px;
+  margin: 0 auto;
+}
+
+.container {
+  position: relative;
+  width: 917px;
+  margin-left: 150px;
+  margin-right: 298px;
+  padding-top: 102px;
+  padding-left: 118px;
+  background-color: var(--color-active);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 222px;
+    bottom: 0;
+    width: 150px;
+    background: linear-gradient(
+      183.47deg,
+      rgba(56, 65, 255, 0) 66.3%,
+      #3841ff 97.14%
+    );
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 131px;
+    bottom: 0;
+    width: 270px;
+    background: linear-gradient(
+      183.47deg,
+      rgba(56, 65, 255, 0) 27.26%,
+      #3841ff 97.14%
+    );
+  }
+}
+
+.title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 9px;
+  font-family: var(--font-bold);
+  font-size: 54px;
+  line-height: 63px;
+  color: var(--color-background);
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    right: -52px;
+    top: -24px;
+    width: 398px;
+    height: 252px;
+    background-image: url(../../images/cards.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+}
+
+.text {
+  margin: 0;
+  margin-bottom: 33px;
+  font-size: 22px;
+  line-height: 26px;
+  color: var(--color-background);
+}
+
+.button {
+  display: inline-block;
+  font-family: var(--font-medium);
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  padding-top: 17px;
+  padding-bottom: 15px;
+  padding-right: 36px;
+  padding-left: 36px;
+  background-color: var(--color-background);
+  border-radius: 4px;
+}

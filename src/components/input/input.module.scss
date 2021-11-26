@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 65px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-medium);
+  font-size: 22px;
+  line-height: 31px;
+}
+
+.image {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 63px;
+    right: -213px;
+    width: 59px;
+    height: 34px;
+    background-image: url('../../images/arrows.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto; 
+  }
+}
+
+.input {
+  width: 390px;
+  height: 60px;
+  text-align: center;
+  padding-left: 17px;
+  font-family: var(--font-medium);
+  font-size: 24px;
+  line-height: 34px;
+  margin-top: 21px;
+  border: 1px solid var(--color-dark);
+  border-radius: 4px;
+  margin-right: 15px;
+
+  &:hover {
+    border-color: var(--color-active)
+  }
+}
+
+.select {
+  width: 120px;
+  height: 60px;
+  padding-left: 17px;
+  font-family: var(--font-regular);
+  font-size: 30px;
+  line-height: 42px;
+  border: 1px solid var(--color-dark);
+  border-radius: 4px;
+  appearance: none;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: url('../../images/switch.svg');
+  background-position: 85% center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    border-color: var(--color-active)
+  }
+}
