@@ -1,27 +1,32 @@
 .wrapper {
   background-color: var(--color-background);
   min-height: 91px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1366px;
+  width: 100%;
+  max-width: 1260px;
   height: 100%;
-  padding-left: 98px;
-  padding-right: 98px;
   margin: 0 auto;
   font-family: var(--font-regular);
   line-height: 19px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .logo {
   padding-bottom: 9px;
+  min-width: 149px;
 }
 
 .nav {
-  margin-left: 19px;
+  padding-left: 109px;
+  width: 100%;
 }
 
 .list {
@@ -33,8 +38,15 @@
 }
 
 .item {
-  display: block;
   margin-right: 25px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.link {
+  display: block;
 
   &:hover {
     opacity: 0.8;
@@ -46,7 +58,7 @@
 }
 
 .user {
-  margin-left: 120px;
+  min-width: 203px;
 }
 
 .login {

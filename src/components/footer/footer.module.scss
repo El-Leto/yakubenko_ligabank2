@@ -1,17 +1,20 @@
 .wrapper {
   background-color: var(--color-background);
-  height: 224px;
+  min-height: 224px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 1366px;
+  width: 100%;
+  max-width: 1260px;
   height: 100%;
   padding-top: 48px;
-  padding-left: 98px;
-  padding-right: 98px;
+  padding-left: 45px;
+  padding-right: 45px;
   margin: 0 auto;
   font-family: var(--font-regular);
   font-size: 12px;

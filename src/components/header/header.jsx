@@ -12,23 +12,23 @@ function Header() {
         </div>
         <nav className={styles.nav}>
           <ul className={styles.list}>
-            <li>
-              <a className={styles.item} href="/">
+            <li className={styles.item}>
+              <a className={styles.link} href="/">
                 Услуги
               </a>
             </li>
-            <li>
-              <a className={styles.item} href="/">
+            <li className={styles.item}>
+              <a className={styles.link} href="/">
                 Рассчитать кредит
               </a>
             </li>
-            <li>
-              <a className={`${styles.item} ${styles.item_active}`} href="/">
+            <li className={styles.item}>
+              <a className={styles.link} href="/">
                 Конвертер валют
               </a>
             </li>
-            <li>
-              <a className={styles.item} href="/">
+            <li className={styles.item}>
+              <a className={styles.link} href="/">
                 Контакты
               </a>
             </li>

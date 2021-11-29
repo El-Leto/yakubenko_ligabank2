@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from '../header/header';
-import Banner from '../banner/banner';
+import Slider from '../slider/slider';
 import Footer from '../footer/footer';
-import Converter from '../converter/converter';
-import History from '../history/history';
+// import Converter from '../converter/converter';
+// import History from '../history/history';
 import styles from './main-page.module.scss';
 
 function ConverterPage() {
@@ -11,9 +11,9 @@ function ConverterPage() {
     <div className={styles.wrapper}>
       <Header />
       <main>
-        <Banner />
-        <Converter />
-        <History />
+        <Slider />
+        {/* <Converter />
+        <History /> */}
       </main>
       <Footer />
     </div>
