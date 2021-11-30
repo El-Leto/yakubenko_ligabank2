@@ -35,3 +35,29 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+
+
+.deposit::before {
+  width: 34px;
+  height: 33px;
+  background-image: url('../images/deposit.svg');
+}
+
+.credits::before {
+  width: 34px;
+  height: 30px;
+  background-image: url('../images/credits.svg');
+}
+
+.insurance::before {
+  width: 28px;
+  height: 34px;
+  background-image: url('../images/insurance.svg');
+}
+
+.online::before {
+  width: 20px;
+  height: 34px;
+  background-image: url('../images/online.svg');
+}

@@ -1,15 +1,16 @@
 import React from 'react';
-import { Pagination, Autoplay, A11y } from 'swiper';
+import SwiperCore, { Pagination, Autoplay, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import cn from 'classnames';
 import 'swiper/swiper.scss';
 import 'swiper/modules/pagination/pagination.scss';
 import styles from './slider.module.scss';
 
+SwiperCore.use([Pagination,Autoplay,A11y]);
+
 function Slider() {
   return (
     <Swiper
-      modules={[Pagination, Autoplay, A11y]}
       slidesPerView={1}
       a11y
       loop
