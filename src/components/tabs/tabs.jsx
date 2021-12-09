@@ -1,17 +1,11 @@
-import React, {useState} from 'react';
-//import SwiperCore, { FreeMode, Thumbs, Pagination } from 'swiper';
+import React, { useState } from 'react';
 import cn from 'classnames';
 import { useMediaQuery } from 'react-responsive';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-//import 'swiper/swiper.scss';
-// import 'swiper/modules/free-mode/free-mode.scss';
-// import 'swiper/modules/thumbs/thumbs.scss';
-// import 'swiper/modules/pagination/pagination.scss';
+import 'swiper/swiper.scss';
 import Tab from '../tab/tab';
 import { tabs } from '../../const';
 import styles from './tabs.module.scss';
-
-// SwiperCore.use([FreeMode, Thumbs, Pagination]);
 
 function Tabs() {
   const isDesktop = useMediaQuery({
@@ -59,10 +53,11 @@ function Tabs() {
         <div>
           <Swiper
             pagination
+            className={cn('slides', styles.slides)}
           >
             {
               tabs.map((tab) => (
-                <SwiperSlide key={tab.id}>
+                <SwiperSlide key={tab.id} className={styles.service}>
                   <Tab tab={tab}/>
                 </SwiperSlide>
               ))
@@ -74,77 +69,3 @@ function Tabs() {
 }
 
 export default Tabs;
-
-// return (
-//   <section className={styles.container}>
-//     <div>
-//       <Swiper
-//         onSwiper={setThumbsSwiper}
-//         spaceBetween={10}
-//         slidesPerView={4}
-//         className="mySwiper2"
-//       >
-//         <SwiperSlide
-//           className="slide-tab"
-//           tabIndex="0"
-//           data-id="0"
-//           onFocus={onSlideFocus}
-//         >
-//           <div>Вклады</div>
-//         </SwiperSlide>
-//         <SwiperSlide
-//           className="slide-tab"
-//           tabIndex="0"
-//           data-id="1"
-//           onFocus={onSlideFocus}
-//         >
-//           <div>Кредиты</div>
-//         </SwiperSlide>
-//         <SwiperSlide
-//           className="slide-tab"
-//           data-id="2"
-//           tabIndex="0"
-//           onFocus={onSlideFocus}
-//         >
-//           <div>Страхование</div>
-//         </SwiperSlide>
-//         <SwiperSlide
-//           className="slide-tab"
-//           data-id="3"
-//           tabIndex="0"
-//           onFocus={onSlideFocus}
-//         >
-//           <div>Онлайн-сервисы</div>
-//         </SwiperSlide>
-//       </Swiper>
-//     </div>
-//     <div>
-//       <Swiper
-//         pagination
-//         thumbs={{ swiper: thumbsSwiper }}
-//         className="mySwiper"
-//       >
-//         <SwiperSlide
-//           className="slide-service"
-//         >
-//           <div>Вклады</div>
-//         </SwiperSlide>
-//         <SwiperSlide
-//           className="slide-service"
-//         >
-//           <div>Кредиты</div>
-//         </SwiperSlide>
-//         <SwiperSlide
-//           className="slide-service"
-//         >
-//           <div>Страхование</div>
-//         </SwiperSlide>
-//         <SwiperSlide
-//           className="slide-service"
-//         >
-//           <div>Онлайн-сервисы</div>
-//         </SwiperSlide>
-//       </Swiper>
-//     </div>
-//   </section>
-// );

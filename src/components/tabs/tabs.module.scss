@@ -9,21 +9,18 @@
   font-family: var(--font-regular);
   font-size: 18px;
   line-height: 23px;
+
+  @media (max-width: 1023px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
-// .swiper {
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .swiper-slide {
-//   text-align: center;
-//   font-size: 18px;
-//   background: #fff;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+.service {
+  @media (max-width: 767px) {
+    background-color: var(--color-background);
+  }
+}
 
 .tabs {
   display: flex;
@@ -51,7 +48,7 @@
   line-height: 21px;
   color: var(--color-dark);
   font-family: var(--font-medium);
-  padding: 36px;
+  padding: 36px 25px;
 
   &_active{
     background-color: var(--color-background);

@@ -1,0 +1,23 @@
+.container {
+  // display: flex;
+  // flex-direction: column;
+  width: 100%;
+  max-width: 1260px;
+  padding-left: 45px;
+  padding-right: 45px;
+  margin: 98px auto;
+  font-family: var(--font-regular);
+
+  @media (max-width: 1023px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 41px;
+  line-height: 54px;
+  font-family: var(--font-bold);
+  margin-bottom: 50px;
+}

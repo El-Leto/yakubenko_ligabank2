@@ -2,9 +2,8 @@ import React from 'react';
 import Header from '../header/header';
 import Slider from '../slider/slider';
 import Tabs from '../tabs/tabs';
+import Calculator from '../calculator/calculator';
 import Footer from '../footer/footer';
-// import Converter from '../converter/converter';
-// import History from '../history/history';
 import styles from './main-page.module.scss';
 
 function ConverterPage() {
@@ -14,8 +13,7 @@ function ConverterPage() {
       <main>
         <Slider />
         <Tabs />
-        {/* <Converter />
-        <History /> */}
+        <Calculator />
       </main>
       <Footer />
     </div>

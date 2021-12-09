@@ -1,33 +1,49 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { addHistory, addRates, clearHistory } from '../actions';
+import { setSelectedOption, updatePrice, setDeposite } from '../action';
 
-const MAX_HISTORY_LENGTH = 10;
-
-const initialState  = {
-  rates: {
-    RUB: 74.27275,
-    USD: 1,
-    EUR: 0.850785,
-    GBP: 0.729112,
-    CNY: 6.4831,
-  },
-  history: [],
+const SelectOption = {
+  INIT: 'init',
+  HOUSE: 'house',
+  CAR: 'car',
 };
 
-const data = createReducer(initialState, {
-  [addHistory]: (state, { payload }) => {
-    state.history.unshift(payload);
+const Credit = {
+  init: {
+    TYPE: 'Выберите цель кредита',
+  },
+  house: {
+    TYPE: 'Ипотечное кредитование',
+    PRICE_NAME: 'Стоимость недвижимости',
+    MIN: 1200000,
+    MAX: 25000000,
+    DEPOSITE_MIN_PERCENT: 10,
+  },
+  car: {
+    TYPE: 'Автомобильное кредитование',
+    PRICE_NAME: 'Стоимость автомобиля',
+    MIN: 500000,
+    MAX: 5000000,
+    DEPOSITE_MIN_PERCENT: 20,
+  },
+};
 
-    if (state.history.length > MAX_HISTORY_LENGTH) {
-      state.history.pop();
-    }
-  },
-  [addRates]: (state, { payload }) => {
-    state.rates = payload;
-  },
-  [clearHistory]: (state) => {
-    state.history = [];
-  },
+const initialState  = {
+  selectedOption: SelectOption.INIT,
+  price: '',
+  deposite: '',
+};
+
+const data = createReducer(initialState, (builder) => {
+  builder.addCase(setSelectedOption, (state, action) => {
+    state.selectedOption = action.payload;
+    state.price = Credit[action.payload].MIN;
+  });
+  builder.addCase(updatePrice, (state, action) => {
+    state.price = action.payload;
+  });
+  builder.addCase(setDeposite, (state, action) => {
+    state.deposite = action.payload;
+  });
 });
 
-export { data };
+export { data, SelectOption, Credit };

@@ -1,5 +1,7 @@
 import { getId } from './utils';
 
+const MONEY_ENDING = ['рубль', 'рубля', 'рублей'];
+
 const tabs = [
   {
     id: 0,
@@ -38,4 +40,4 @@ const tabs = [
   },
 ];
 
-export { tabs };
+export { tabs, MONEY_ENDING };
