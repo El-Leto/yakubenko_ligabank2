@@ -13,7 +13,8 @@ function StepTwo() {
   const price = useSelector(getPrice);
   const deposite = useSelector(getDeposite);
 
-  const [isFocus, setIsFocus] = useState(false);
+  const [isPriceFocus, setIsPriceFocus] = useState(false);
+  const [isDepositeFocus, setIsDepositeFocus] = useState(false);
 
   const handlePriceChange = (evt) => {
     const value = getNumber(evt.target.value);
@@ -25,7 +26,7 @@ function StepTwo() {
 
   const handlePriceBlur = (evt) => {
     const value = getNumber(evt.target.value);
-    setIsFocus(false);
+    setIsPriceFocus(false);
 
     if (value < Credit[option].MIN) {
       dispatch(updatePrice(Credit[option].MIN));
@@ -33,10 +34,11 @@ function StepTwo() {
   };
 
   const handlePriceFocus = (evt) => {
-    setIsFocus(true);
+    setIsPriceFocus(true);
   };
 
-  const getFormattingNumber = (value) => isFocus ? divideNumberByPieces(value) : getPriceString(value);
+  const getFormattingPrice = (value) => isPriceFocus ? divideNumberByPieces(value) : getPriceString(value);
+  const getFormattingDeposite = (value) => isDepositeFocus ? divideNumberByPieces(value) : getPriceString(value);
 
   const getDepositeMin = (value) => Math.round(value / 100 * Credit[option].DEPOSITE_MIN_PERCENT);
 
@@ -49,8 +51,21 @@ function StepTwo() {
   }, [depositeMin, dispatch, option]);
 
   const handleDepositeChange = (evt) => {
-    evt.preventDefault();
-    dispatch(setDeposite(evt.target.value));
+    dispatch(setDeposite(getNumber(evt.target.value)));
+  };
+
+  const handleDepositeBlur = (evt) => {
+    setIsDepositeFocus(false);
+
+    const value = getNumber(evt.target.value);
+
+    if (value > price) {
+      dispatch(setDeposite(price));
+    }
+  };
+
+  const handleDepositeFocus = (evt) => {
+    setIsDepositeFocus(true);
   };
 
   return (
@@ -65,7 +80,7 @@ function StepTwo() {
           className={styles.input}
           type="text"
           name="price"
-          value={getFormattingNumber(price)}
+          value={getFormattingPrice(price)}
           onChange={handlePriceChange}
           onBlur={handlePriceBlur}
           onFocus={handlePriceFocus}
@@ -81,8 +96,10 @@ function StepTwo() {
           className={styles.input}
           type="text"
           name="deposit"
-          value={getFormattingNumber(deposite)}
+          value={getFormattingDeposite(deposite)}
           onChange={handleDepositeChange}
+          onBlur={handleDepositeBlur}
+          onFocus={handleDepositeFocus}
         >
         </input>
       </label>
