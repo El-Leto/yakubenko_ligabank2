@@ -1,6 +1,7 @@
 .container {
   max-width: 600px;
   margin-bottom: 33px;
+  grid-column: 1 / 2;
 }
 
 .title {
@@ -12,6 +13,7 @@
 }
 
 .button {
+  position: relative;
   font-size: 16px;
   line-height: 22px;
   font-family: var(--font-medium);
@@ -24,8 +26,27 @@
   width: 100%;
   cursor: pointer;
 
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    right: 22px;
+    top: 24px;
+    width: 18px;
+    height: 11px;
+
+    background-image: url('../../images/switch.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 11px;
+    background-position: 90% center;
+  }
+
   &_open {
     border-radius: 4px 4px 0 0;
+
+    &::before {
+      transform: rotate(180deg);
+    }
   }
 }
 
@@ -40,7 +61,6 @@
   line-height: 22px;
   font-family: var(--font-regular);
   color: var(--color-dark);
-  padding: 20px 23px 16px;
   border: 1px solid var(--color-dark);
   border-top: none;
   border-bottom: 1px solid #c1c2ca;
@@ -54,4 +74,17 @@
 .label {
   cursor: pointer;
   display: block;
+  padding: 20px 23px 16px;
+
+  &:focus {
+    border: none;
+    outline: none;
+    background-color: var(--color-background);
+    border-radius: 0 0 4px 4px;
+  }
+
+  &:hover {
+    background-color: var(--color-background);
+    border-radius: 0 0 4px 4px;
+  }
 }

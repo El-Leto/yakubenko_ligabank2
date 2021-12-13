@@ -1,4 +1,4 @@
-import { MONEY_ENDING } from './const';
+import { Credit, MONEY_ENDING, PERIOD_ENDING, MAX_PERCENT_FOR_INCOME, MOM_CAPITAL } from './const';
 
 const getId = () => Math.random().toString(36).slice(2);
 
@@ -16,5 +16,56 @@ const numWord = (value, words) => {
 };
 
 const getPriceString = (number) => `${divideNumberByPieces(number)} ${numWord(number, MONEY_ENDING)}`;
+const getPeriodString = (number) => `${getNumber(number)} ${numWord(number, PERIOD_ENDING)}`;
 
-export { getId, getNumber, divideNumberByPieces, getPriceString };
+const totalPrice = (price, deposite, momCapital) => momCapital ? price - deposite - MOM_CAPITAL : price - deposite;
+
+const getFormattingPrice = (value, state) => state ? divideNumberByPieces(value) : getPriceString(value);
+
+const getFormattingDeposite = (value, state) => state ? divideNumberByPieces(value) : getPriceString(value);
+
+const getFormattingPeriod = (value, state) => state ? divideNumberByPieces(value) : getPeriodString(value);
+
+const getHouseRate = (depositePercent) => depositePercent < Credit['house'].RATE_DIFFERENCE ? Credit['house'].RATE_MAX : Credit['house'].RATE_MIN;
+
+const getCarRate = (price, casco, insurance) => {
+  if(casco && insurance) {
+    return Credit['car'].RATE_CASCO_AND_INSURANCE;
+  }
+  if(casco || insurance) {
+    return Credit['car'].RATE_CASCO_OR_INSURANCE;
+  }
+  if(price < Credit['car'].RATE_DIFFERENCE_PRICE) {
+    return Credit['car'].RATE_PRICE_MIN;
+  }
+
+  if(price >= Credit['car'].RATE_DIFFERENCE_PRICE) {
+    return Credit['car'].RATE_PRICE_MAX;
+  }
+};
+
+const getMonthlyPayment = (price, rate, period) => {
+  const ps = rate / 100 / 12;
+  const kp = period * 12;
+  const total = price * (ps + (ps / (Math.pow((1 + ps), kp) - 1)));
+
+  return total.toFixed(0);
+};
+
+const getIncome = (payment) => (payment * 100 / MAX_PERCENT_FOR_INCOME).toFixed(0);
+
+export {
+  getId,
+  getNumber,
+  divideNumberByPieces,
+  getPriceString,
+  getPeriodString,
+  totalPrice,
+  getFormattingPrice,
+  getFormattingDeposite,
+  getFormattingPeriod,
+  getHouseRate,
+  getCarRate,
+  getMonthlyPayment,
+  getIncome
+};

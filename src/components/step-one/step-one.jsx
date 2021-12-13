@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 import { setSelectedOption } from '../../store/action';
 import { getSelectedOption } from '../../store/data/selectors';
-import { SelectOption, Credit } from '../../store/data/data';
+import { SelectOption } from '../../const';
+import { Credit } from '../../const';
 import styles from './step-one.module.scss';
 
 function StepOne() {
@@ -36,12 +37,15 @@ function StepOne() {
             name="credit"
             id={SelectOption.HOUSE}
             className="visually-hidden"
+            tabIndex="-1"
           >
           </input>
           <label
             htmlFor={SelectOption.HOUSE}
             className={styles.label}
             onClick={handleItemClick}
+            onKeyPress={handleItemClick}
+            tabIndex="0"
           >
             {Credit['house'].TYPE}
           </label>
@@ -52,12 +56,15 @@ function StepOne() {
             name="credit"
             id={SelectOption.CAR}
             className="visually-hidden"
+            tabIndex="-1"
           >
           </input>
           <label
             htmlFor={SelectOption.CAR}
             className={styles.label}
             onClick={handleItemClick}
+            onKeyPress={handleItemClick}
+            tabIndex="0"
           >
             {Credit['car'].TYPE}
           </label>

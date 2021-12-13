@@ -173,28 +173,6 @@
   }
 }
 
-// :global(.swiper-pagination) {
-//   padding-bottom: 23px;
-
-//   @media screen and (max-width: 1023px) {
-//     padding-bottom: 0;
-//   }
-
-//   @media screen and (max-width: 767px) {
-//     margin-bottom: -7px;
-//   }
-// }
-
-// :global(.tabs .swiper-pagination-bullet) {
-//   opacity: 1;
-//   background-color: #2028b6;
-
-//   @media (max-width: 767px) {
-//     width: 6px;
-//     height: 6px;
-//   }
-// }
-
 :global(.slides .swiper-pagination-bullet-active) {
   background-color: #e0e0e0;
 }

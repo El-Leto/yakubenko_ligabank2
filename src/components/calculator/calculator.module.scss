@@ -21,3 +21,9 @@
   font-family: var(--font-bold);
   margin-bottom: 50px;
 }
+
+.form {
+  display: grid;
+  grid-template-columns: 51.3% 1fr;
+  grid-column-gap: 70px;
+}
