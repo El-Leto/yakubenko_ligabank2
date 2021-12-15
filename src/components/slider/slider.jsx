@@ -22,7 +22,7 @@ function Slider() {
           <div className={styles.wrapper}>
             <h2 className={cn(styles.title, styles.title_first)}>Лига Банк</h2>
             <p className={cn(styles.text, styles.text_first)}>Кредиты на любой случай</p>
-            <a className={styles.button} href="/">Рассчитать кредит</a>
+            <a className={styles.button} href="#calculator">Рассчитать кредит</a>
           </div>
         </section>
       </SwiperSlide>
@@ -39,7 +39,7 @@ function Slider() {
           <div className={styles.wrapper}>
             <h2 className={styles.title}>Лига Банк</h2>
             <p className={styles.text}>Всегда рядом</p>
-            <a className={cn(styles.button, styles.button_add)} href="/">Найти отделение</a>
+            <a className={cn(styles.button, styles.button_add)} href="#contacts">Найти отделение</a>
           </div>
         </section>
       </SwiperSlide>
