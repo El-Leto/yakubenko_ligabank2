@@ -185,22 +185,24 @@ function StepTwo() {
           onFocus={handlePriceFocus}
         >
         </input>
-        <button
-          type="button"
-          name={buttonsNames.MINUS}
-          className={cn(styles.button, styles.button__minus)}
-          onClick={handleButtonClick}
-        >
-        </button>
-        <button
-          type="button"
-          name={buttonsNames.PLUS}
-          onClick={handleButtonClick}
-          className={cn(styles.button, styles.button__plus)}
-        >
-        </button>
-        <span className={styles.text}>От {divideNumberByPieces(Credit[option].MIN)} до {getPriceString(Credit[option].MAX)}</span>
       </label>
+      <button
+        type="button"
+        name={buttonsNames.MINUS}
+        className={cn(styles.button, styles.button__minus)}
+        onClick={handleButtonClick}
+        aria-label="Уменьшить"
+      >
+      </button>
+      <button
+        type="button"
+        name={buttonsNames.PLUS}
+        onClick={handleButtonClick}
+        className={cn(styles.button, styles.button__plus)}
+        aria-label="Увеличить"
+      >
+      </button>
+      <span className={styles.text}>От {divideNumberByPieces(Credit[option].MIN)} до {getPriceString(Credit[option].MAX)}</span>
       <label
         className={styles.label}
       >
@@ -243,21 +245,21 @@ function StepTwo() {
           onFocus={handlePeriodFocus}
         >
         </input>
-        <input
-          className={styles.range}
-          type="range"
-          value={period}
-          min={Credit[option].PERIOD_MIN}
-          max={Credit[option].PERIOD_MAX}
-          step={Credit[option].PERIOD_STEP}
-          onChange={handlePeriodChange}
-        >
-        </input>
-        <div className={cn(styles.wrapper, styles.range__percent)}>
-          <span className={styles.text}>{getFormattingPeriod(Credit[option].PERIOD_MIN, isPeriodFocus)}</span>
-          <span className={styles.text}>{getFormattingPeriod(Credit[option].PERIOD_MAX, isPeriodFocus)}</span>
-        </div>
       </label>
+      <input
+        className={styles.range}
+        type="range"
+        value={period}
+        min={Credit[option].PERIOD_MIN}
+        max={Credit[option].PERIOD_MAX}
+        step={Credit[option].PERIOD_STEP}
+        onChange={handlePeriodChange}
+      >
+      </input>
+      <div className={cn(styles.wrapper, styles.range__percent)}>
+        <span className={styles.text}>{getFormattingPeriod(Credit[option].PERIOD_MIN, isPeriodFocus)}</span>
+        <span className={styles.text}>{getFormattingPeriod(Credit[option].PERIOD_MAX, isPeriodFocus)}</span>
+      </div>
       {
         option === SelectOption.HOUSE &&
         <div>

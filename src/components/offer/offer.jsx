@@ -57,19 +57,19 @@ function Offer() {
         <div className={styles.wrapper}>
           <h3 className={styles.title}>Наше предложение</h3>
           <ul className={styles.list}>
-            <li>
+            <li className={styles.item}>
               <p className={styles.number}>{getPriceString(total)}</p>
               <p className={styles.text}>{Credit[option].PRICE_TEXT}</p>
             </li>
-            <li>
+            <li className={styles.item}>
               <p className={styles.number}>{`${rate}%`}</p>
               <p className={styles.text}>Процентная ставка</p>
             </li>
-            <li>
+            <li className={styles.item}>
               <p className={styles.number}>{getPriceString(monthlyPayment)}</p>
               <p className={styles.text}>Ежемесячный платеж</p>
             </li>
-            <li>
+            <li className={styles.item}>
               <p className={styles.number}>{getPriceString(income)}</p>
               <p className={styles.text}>Необходимый доход</p>
             </li>
@@ -78,6 +78,7 @@ function Offer() {
             type="button"
             className={styles.button}
             onClick={handleButtonClick}
+            aria-label="Оформить заявку"
           >
             Оформить заявку
           </button>

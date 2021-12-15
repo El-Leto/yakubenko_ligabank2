@@ -2,6 +2,15 @@
   max-width: 600px;
   margin-bottom: 33px;
   grid-column: 1 / 2;
+
+  @media (max-width: 1023px) {
+    max-width: 100%;
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 25px;
+  }
 }
 
 .title {
@@ -10,6 +19,18 @@
   font-size: 22px;
   line-height: 31px;
   font-family: var(--font-medium);
+
+  @media (max-width: 1023px) {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 18px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 14px;
+  }
 }
 
 .button {
@@ -46,6 +67,14 @@
 
     &::before {
       transform: rotate(180deg);
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 20px 14px 16px;
+
+    &::before {
+      right: 13px;
     }
   }
 }

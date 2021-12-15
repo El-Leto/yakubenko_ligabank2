@@ -1,6 +1,15 @@
 .wrapper {
   background-color: var(--color-background);
   min-height: 224px;
+
+  @media (max-width: 1023px) {
+    position: relative;
+    height: 350px;
+  }
+
+  @media (max-width: 767px) {
+    height: 412px;
+  }
 }
 
 .container {
@@ -17,15 +26,48 @@
   font-family: var(--font-regular);
   font-size: 12px;
   line-height: 17px;
+
+  @media (max-width: 1023px) {
+    display: grid;
+    grid-template-columns: 52% 48%;
+    grid-template-rows: repeat(8, auto);
+    justify-content: stretch;
+    align-content: start;
+    padding-top: 57px;
+    padding-bottom: 53px;
+  }
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 48px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 40px;
+  }
 }
 
 .contacts_text {
   margin: 0;
   padding-top: 11px;
+
+  @media (max-width: 1023px) {
+    padding-top: 5px;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .contacts {
   width: 253px;
+
+  @media (max-width: 1023px) {
+    grid-row: 8 / 9;
+    grid-column: 1 / 2;
+  }
 }
 
 .list {
@@ -40,10 +82,29 @@
   width: 144px;
   font-size: 16px;
   font-family: var(--font-medium);
+
+  @media (max-width: 1023px) {
+    padding-top: 8px;
+    order: -1;
+    margin-bottom: 0;
+    grid-row: 2 / 7;
+    grid-column: 1 / 2;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 16px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 18px;
+  }
 }
 
 .item {
   padding: 10px 0 4px 0;
+
+  @media (max-width: 767px) {
+    padding: 9px 0 0 0;
+  }
 
   &:hover {
     opacity: 0.8;
@@ -64,6 +125,16 @@
     height: 16px;
     background-image: url('../../images/mobile.svg');
   }
+
+  @media (max-width: 1023px) {
+    width: 200px;
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+
+    &::before {
+      top: 3px;
+    }
+  }
 }
 
 .title {
@@ -72,6 +143,14 @@
   margin: 0;
   padding-top: 12px;
   padding-bottom: 5px;
+
+  @media (max-width: 1023px) {
+    padding-top: 3px;
+  }
+
+  @media (max-width: 767px) {
+    padding-bottom: 3px;
+  }
 }
 
 .text {
@@ -92,12 +171,39 @@
     height: 16px;
     background-image: url('../../images/phone.svg');
   }
+
+  @media (max-width: 1023px) {
+    padding-top: 16px;
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+
+    &::before {
+      left: 1px;
+      top: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 12px;
+  }
 }
 
 .social {
   width: 102px;
   display: flex;
   align-items: center;
+
+  @media (max-width: 1023px) {
+    justify-content: space-between;
+    width: 118px;
+    grid-row: 6 / 8;
+    grid-column: 2 / 3;
+    padding-top: 7px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 4px;
+  }
 }
 
 .social_icon {

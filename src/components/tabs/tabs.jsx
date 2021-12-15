@@ -23,7 +23,7 @@ function Tabs() {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="services">
       <h2 className="visually-hidden">Услуги</h2>
       {isDesktop &&
         <div>

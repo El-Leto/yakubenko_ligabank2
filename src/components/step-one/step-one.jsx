@@ -26,6 +26,7 @@ function StepOne() {
         type='button'
         onClick={() => setIsOpen(!isOpen)}
         className={cn(styles.button, isOpen && styles.button_open)}
+        aria-label="Открыть варианты"
       >
         {Credit[option].TYPE}
       </button>

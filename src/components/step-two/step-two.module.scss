@@ -2,6 +2,15 @@
   max-width: 600px;
   grid-column: 1 / 2;
   position: relative;
+
+  @media (max-width: 1023px) {
+    max-width: 100%;
+    margin-bottom: 17px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+  }
 }
 
 .title {
@@ -10,17 +19,25 @@
   font-size: 22px;
   line-height: 31px;
   font-family: var(--font-medium);
+
+  @media (max-width: 1023px) {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 13px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 9px;
+  }
 }
 
 .label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 19px;
   position: relative;
-
-  &__last {
-    margin-bottom: 0;
-  }
+  margin-bottom: 0;
 
   &_error {
     &::before {
@@ -52,6 +69,12 @@
     outline-color: var(--color-error);
     color: transparent;
   }
+
+  @media (max-width: 1023px) {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 19px 23px 17px;
+  }
 }
 
 .text {
@@ -59,7 +82,16 @@
   line-height: 20px;
   color: var(--color-grey);
   margin-top: 6px;
+  margin-bottom: 18px;
   display: inline-block;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 13px;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 9px;
+  }
 }
 
 .wrapper {
@@ -120,7 +152,9 @@
   }
 
   &__percent {
-    margin-bottom: 18px;
+    @media (max-width: 1023px) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -129,7 +163,7 @@
   position: absolute;
   z-index: 0;
   padding: 0;
-  top: 30px;
+  top: 79px;
   width: 60px;
   height: 60px;
   cursor: pointer;
@@ -137,6 +171,14 @@
   background-color: var(--color-transparent);
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: 1023px) {
+    top: 68px;
+  }
+
+  @media (max-width: 767px) {
+    top: 62px;
+  }
 
   &__minus {
     left: 2px;
@@ -146,6 +188,10 @@
   &__plus {
     right: 2px;
     background-image: url('../../images/plus.svg');
+
+    @media (max-width: 767px) {
+      right: -7px;
+    }
   }
 }
 
@@ -165,4 +211,9 @@
 
 .checkbox_text {
   padding-left: 8px;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }

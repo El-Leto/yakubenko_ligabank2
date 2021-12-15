@@ -15,7 +15,7 @@ function Slider() {
       a11y
       loop
       pagination={{ clickable: true }}
-      //autoplay={{ 'delay': 4000, 'disableOnInteraction': false }}
+      autoplay={{ 'delay': 4000, 'disableOnInteraction': false }}
     >
       <SwiperSlide>
         <section className={cn(styles.promo, styles.promo_first)}>

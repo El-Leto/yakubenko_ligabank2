@@ -20,7 +20,7 @@ function Modal({ isOpen, onClose }) {
       <p className={styles.text}>
         Наш менеджер скоро свяжется с вами по указанному номеру телефона.
       </p>
-      <button className={styles.button} onClick={onClose} type="button" />
+      <button className={styles.button} onClick={onClose} type="button" aria-label="Закрыть"/>
     </ReactModal>
   );
 }

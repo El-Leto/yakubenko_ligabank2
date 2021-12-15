@@ -12,9 +12,12 @@ const ActionType = {
   SET_IS_REQUEST_OPEN: 'setIsRequestOpen',
   SET_NUMBER_REQUEST: 'setNumberRequest',
   SET_FORM: 'setForm',
+  SET_USER: 'setUser',
   SET_IS_INCORRECT_PRICE: 'setIsIncorrectPrice',
   SET_IS_MODAL_OPEN: 'setIsModalOpen',
+  SET_IS_LOGIN_OPEN: 'setIsLoginOpen',
   SET_IS_FORM_VALIDATE: 'setIsFormValidate',
+  SET_IS_VISIBLE_PASSWORD: 'setIsVisiblePassword',
 };
 
 export const setSelectedOption = createAction(ActionType.SET_SELECTED_OPTION, (payload) => ({
@@ -61,6 +64,10 @@ export const setForm = createAction(ActionType.SET_FORM, (payload) => ({
   payload,
 }));
 
+export const setUser = createAction(ActionType.SET_USER, (payload) => ({
+  payload,
+}));
+
 export const setIsIncorrectPrice = createAction(ActionType.SET_IS_INCORRECT_PRICE, (payload) => ({
   payload,
 }));
@@ -69,6 +76,14 @@ export const setIsModalOpen = createAction(ActionType.SET_IS_MODAL_OPEN, (payloa
   payload,
 }));
 
+export const setIsLoginOpen = createAction(ActionType.SET_IS_LOGIN_OPEN, (payload) => ({
+  payload,
+}));
+
 export const setIsFormValidate = createAction(ActionType.SET_IS_FORM_VALIDATE, (payload) => ({
+  payload,
+}));
+
+export const setIsVisiblePassword = createAction(ActionType.SET_IS_VISIBLE_PASSWORD, (payload) => ({
   payload,
 }));

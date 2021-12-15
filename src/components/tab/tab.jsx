@@ -46,7 +46,7 @@ function Tab({ tab }) {
           ))}
         </ul>
         {isButton &&
-          <button className={styles.button}>Узнать подробнее</button>}
+          <button className={styles.button} aria-label="Узнать подробнее" >Узнать подробнее</button>}
         {text &&
         <p className={styles.text}>
           {text}

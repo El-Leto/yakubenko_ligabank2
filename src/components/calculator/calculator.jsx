@@ -14,7 +14,7 @@ function Calculator() {
   const isRequestOpen = useSelector(getIsRequestOpen);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="calculator">
       <h2 className={styles.title}>Кредитный калькулятор</h2>
       <form className={styles.form}>
         <StepOne />

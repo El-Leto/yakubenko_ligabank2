@@ -7,24 +7,24 @@ function Footer() {
     <footer className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.contacts}>
-          <Logo />
+          <Logo isfooter/>
           <p className={styles.contacts_text}>
           150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия Банка России №1050 Ⓒ Лига Банк, 2019
           </p>
         </div>
         <ul className={`${styles.list} ${styles.menu}`} >
           <li className={styles.item}>
-            <a href="/">
+            <a href="#services">
               Услуги
             </a>
           </li>
           <li className={styles.item}>
-            <a href="/">
+            <a href="#calculator">
               Рассчитать кредит
             </a>
           </li>
           <li className={styles.item}>
-            <a href="/">
+            <a href="#contacts">
               Контакты
             </a>
           </li>

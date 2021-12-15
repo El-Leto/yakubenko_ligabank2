@@ -12,9 +12,12 @@ import {
   setIsRequestOpen,
   setNumberRequest,
   setForm,
+  setUser,
   setIsIncorrectPrice,
   setIsModalOpen,
-  setIsFormValidate
+  setIsLoginOpen,
+  setIsFormValidate,
+  setIsVisiblePassword
 } from '../action';
 
 const initialState  = {
@@ -33,9 +36,15 @@ const initialState  = {
     phone: '',
     email: '',
   },
+  user: {
+    login: '',
+    password: '',
+  },
   isIncorrectPrice: false,
   isModalOpen: false,
+  isLoginOpen: false,
   formValidate: false,
+  isVisible: false,
 };
 
 const data = createReducer(initialState, (builder) => {
@@ -74,14 +83,23 @@ const data = createReducer(initialState, (builder) => {
   builder.addCase(setForm, (state, action) => {
     state.form = action.payload;
   });
+  builder.addCase(setUser, (state, action) => {
+    state.user = action.payload;
+  });
   builder.addCase(setIsIncorrectPrice, (state, action) => {
     state.isIncorrectPrice = action.payload;
   });
   builder.addCase(setIsModalOpen, (state, action) => {
     state.isModalOpen = action.payload;
   });
+  builder.addCase(setIsLoginOpen, (state, action) => {
+    state.isLoginOpen = action.payload;
+  });
   builder.addCase(setIsFormValidate, (state, action) => {
     state.formValidate = action.payload;
+  });
+  builder.addCase(setIsVisiblePassword, (state, action) => {
+    state.isVisible = action.payload;
   });
 });
 

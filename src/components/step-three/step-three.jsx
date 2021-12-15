@@ -88,7 +88,6 @@ function StepThree() {
           autoFocus
           required
           placeholder='ФИО'
-          value={form[InputsName.NAME]}
           onChange={handleInputChange}
         >
         </input>
@@ -104,7 +103,6 @@ function StepThree() {
           type='tel'
           required
           placeholder='Телефон'
-          value={form[InputsName.PHONE]}
           onChange={handleInputChange}
         >
         </input>
@@ -120,7 +118,6 @@ function StepThree() {
           type='email'
           required
           placeholder='E-mail'
-          value={form[InputsName.EMAIL]}
           onChange={handleInputChange}
         >
         </input>
@@ -129,6 +126,7 @@ function StepThree() {
         type="submit"
         className={styles.button}
         onClick={handleButtonClick}
+        aria-label="Отправить"
       >
         Отправить
       </button>
@@ -138,7 +136,6 @@ function StepThree() {
         onClose={() => {
           dispatch(setIsModalOpen(false));
           dispatch(setIsRequestOpen(false));
-          //onDataSet((state) => ({ ...state, purpose: '' }));
           document.body.style = 'overflow: visible;';
         }}
       />

@@ -10,15 +10,35 @@
   padding-right: 67px;
   padding-bottom: 55px;
   background-color: var(--color-background);
+
+  @media (max-width: 1023px) {
+    max-width: 678px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 290px;
+    padding-top: 35px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 35px;
+  }
 }
 
 .title {
   margin: 0;
   font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 12px;
   line-height: 30px;
+  font-weight: var(--font-medium);
+  margin-bottom: 12px;
   text-align: center;
+
+  @media (max-width: 767px) {
+    max-width: 290px;
+    font-size: 18px;
+    line-height: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .text {
@@ -28,23 +48,45 @@
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
+
+  @media (max-width: 1023px) {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .button {
-  border: none;
-  background-color: transparent;
-  width: 30px;
-  height: 30px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../../images/menu-close.svg');
-  background-size: 20px 20px;
   position: absolute;
   top: 18px;
   right: 18px;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-image: url('../../images/menu-close.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: 20px 20px;
 
   &:hover {
     cursor: pointer;
     opacity: 0.7;
+  }
+
+  @media (max-width: 1023px) {
+    top: 23px;
+    right: 24px;
+    background-size: 21px 21px;
+  }
+
+  @media (max-width: 767px) {
+    top: 6px;
+    right: 6px;
+    background-size: 16px 16px;
   }
 }
