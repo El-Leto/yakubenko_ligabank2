@@ -18,7 +18,6 @@ function Login({ isOpen, onClose }) {
     localStorage.setItem('user', JSON.stringify(user));
   }, [user]);
 
-
   const handleButtonClick = () => {
     dispatch(setIsLoginOpen(false));
   };
@@ -47,7 +46,7 @@ function Login({ isOpen, onClose }) {
         <img src={logo} alt="ligabank logo" width="150" height="27"/>
         <button className={styles.button_close} onClick={onClose} type="button" aria-label="Закрыть" />
       </div>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleButtonClick}>
         <label
           className={styles.label}
         >
@@ -89,9 +88,8 @@ function Login({ isOpen, onClose }) {
         </label>
         <a className={styles.link} href="/">Забыли пароль?</a>
         <button
-          type="button"
+          type="submit"
           className={styles.button}
-          onClick={handleButtonClick}
           aria-label="Войти"
         >
             Войти

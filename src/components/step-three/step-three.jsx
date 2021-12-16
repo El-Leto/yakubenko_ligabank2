@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import InputMask from 'react-input-mask';
 import { Modal } from '../modal/modal';
 import cn from 'classnames';
 import { setIsRequestOpen, setForm, setIsModalOpen, setIsFormValidate } from '../../store/action';
@@ -31,7 +32,7 @@ function StepThree() {
       }, 1000);
     }
 
-    if(form.name || form.phone || form.email) {
+    if(form.name && form.phone && form.email) {
       dispatch(setIsFormValidate(false));
       dispatch(setIsModalOpen(true));
     }
@@ -40,6 +41,16 @@ function StepThree() {
   useEffect(() => {
     localStorage.setItem('Form', JSON.stringify(form));
   }, [form]);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
 
   const handleInputChange = (evt) => {
     const {name, value} = evt.target;
@@ -96,16 +107,16 @@ function StepThree() {
           htmlFor={InputsName.PHONE}
         >Ваше имя
         </label>
-        <input
+        <InputMask
           className={styles.input}
           id={InputsName.PHONE}
           name={InputsName.PHONE}
-          type='tel'
-          required
-          placeholder='Телефон'
           onChange={handleInputChange}
-        >
-        </input>
+          placeholder="Телефон"
+          mask="+7 (999) 999-99-99"
+          aria-label="Телефон"
+          required
+        />
         <label
           className="visually-hidden"
           htmlFor={InputsName.EMAIL}

@@ -9,7 +9,8 @@ import {
   getMomCapital,
   getCasco,
   getInsurance,
-  getNumberRequest
+  getNumberRequest,
+  getIsIncorrectPrice
 } from '../../store/data/selectors';
 import { SelectOption } from '../../const';
 import { setIsRequestOpen, setNumberRequest } from '../../store/action';
@@ -36,6 +37,7 @@ function Offer() {
   const casco = useSelector(getCasco);
   const insurance = useSelector(getInsurance);
   const number = useSelector(getNumberRequest);
+  const incorrectPrice = useSelector(getIsIncorrectPrice);
 
   const total = option === SelectOption.HOUSE ? totalPrice(price, deposite, momCapital) : price - deposite;
   const rate = option === SelectOption.HOUSE ? getHouseRate(depositePercent) : getCarRate(price, casco, insurance);
@@ -79,6 +81,7 @@ function Offer() {
             className={styles.button}
             onClick={handleButtonClick}
             aria-label="Оформить заявку"
+            disabled={incorrectPrice}
           >
             Оформить заявку
           </button>

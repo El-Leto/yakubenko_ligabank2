@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 import Logo from '../logo/logo';
@@ -14,6 +14,26 @@ function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const isLoginOpen = useSelector(getIsLoginOpen);
+
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isNavOpen]);
+
+  useEffect(() => {
+    if (isLoginOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isLoginOpen]);
 
   const handleButtonClick = (evt) => {
     evt.preventDefault();

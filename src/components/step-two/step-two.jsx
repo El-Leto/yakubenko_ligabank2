@@ -152,7 +152,15 @@ function StepTwo() {
   const handleButtonClick = (evt) => {
     const name = evt.target.name;
 
-    if ((price <= Credit[option].MIN && name === buttonsNames.minus) || (price >= Credit[option].MAX && name === buttonsNames.plus)) {
+    if (price > Credit[option].MAX && name === buttonsNames.minus) {
+      dispatch(updatePrice(Credit[option].MAX));
+      dispatch(setIsIncorrectPrice(false));
+      return;
+    }
+
+    if (price < Credit[option].MIN && name === buttonsNames.plus) {
+      dispatch(updatePrice(Credit[option].MIN));
+      dispatch(setIsIncorrectPrice(false));
       return;
     }
 
@@ -192,6 +200,7 @@ function StepTwo() {
         className={cn(styles.button, styles.button__minus)}
         onClick={handleButtonClick}
         aria-label="Уменьшить"
+        disabled={price <= Credit[option].MIN}
       >
       </button>
       <button
@@ -200,6 +209,7 @@ function StepTwo() {
         onClick={handleButtonClick}
         className={cn(styles.button, styles.button__plus)}
         aria-label="Увеличить"
+        disabled={price >= Credit[option].MAX}
       >
       </button>
       <span className={styles.text}>От {divideNumberByPieces(Credit[option].MIN)} до {getPriceString(Credit[option].MAX)}</span>

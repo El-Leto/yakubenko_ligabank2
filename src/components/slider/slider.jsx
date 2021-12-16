@@ -30,7 +30,7 @@ function Slider() {
         <section className={cn(styles.promo, styles.promo_second)}>
           <div className={styles.wrapper}>
             <h2 className={styles.title}>Лига Банк</h2>
-            <p className={styles.text}>Ваша уверенность в завтрашнем дне</p>
+            <p className={styles.text}>Ваша уверенность в&nbsp;завтрашнем дне</p>
           </div>
         </section>
       </SwiperSlide>

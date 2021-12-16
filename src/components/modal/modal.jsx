@@ -4,6 +4,7 @@ import ReactModal from 'react-modal';
 import styles from './modal.module.scss';
 
 function Modal({ isOpen, onClose }) {
+
   return (
     <ReactModal
       className={styles.modal}
