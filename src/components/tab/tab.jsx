@@ -15,9 +15,9 @@ import creditsMobile from '../../images/service-1-mobile.jpg';
 import insuranceMobile from '../../images/service-2-mobile.jpg';
 import onlineMobile from '../../images/service-3-mobile.jpg';
 
-const imagesDesktop = [deposit, credits, insurance, online];
-const imagesTablet = [depositTablet, creditsTablet, insuranceTablet, onlineTablet];
-const imagesMobile = [depositMobile, creditsMobile, insuranceMobile, onlineMobile];
+const imageDesktops = [deposit, credits, insurance, online];
+const imageTablets = [depositTablet, creditsTablet, insuranceTablet, onlineTablet];
+const imageMobiles = [depositMobile, creditsMobile, insuranceMobile, onlineMobile];
 
 function Tab({ tab }) {
 
@@ -54,13 +54,13 @@ function Tab({ tab }) {
         </p>}
       </div>
       <Desktop>
-        <img src={imagesDesktop[id]} alt={`${tabName}`} className={styles.image} width="440" height="290"/>
+        <img src={imageDesktops[id]} alt={`${tabName}`} className={styles.image} width="440" height="290"/>
       </Desktop>
       <Tablet>
-        <img src={imagesTablet[id]} alt={`${tabName}`} className={styles.image} width="289" height="260"/>
+        <img src={imageTablets[id]} alt={`${tabName}`} className={styles.image} width="289" height="260"/>
       </Tablet>
       <Mobile>
-        <img src={imagesMobile[id]} alt={`${tabName}`} className={styles.image} width="87" height="113"/>
+        <img src={imageMobiles[id]} alt={`${tabName}`} className={styles.image} width="87" height="113"/>
       </Mobile>
     </div>
   );
@@ -71,7 +71,12 @@ Tab.propTypes = {
     tabName: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    advantages: PropTypes.array.isRequired,
+    advantages: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+      }).isRequired,
+    ).isRequired,
     isButton: PropTypes.bool.isRequired,
     text: PropTypes.string,
     linkText: PropTypes.string,

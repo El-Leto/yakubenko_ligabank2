@@ -20,70 +20,90 @@ const ActionType = {
   SET_IS_VISIBLE_PASSWORD: 'setIsVisiblePassword',
 };
 
-export const setSelectedOption = createAction(ActionType.SET_SELECTED_OPTION, (payload) => ({
+const setSelectedOption = createAction(ActionType.SET_SELECTED_OPTION, (payload) => ({
   payload,
 }));
 
-export const updatePrice = createAction(ActionType.UPDATE_PRICE, (payload) => ({
+const updatePrice = createAction(ActionType.UPDATE_PRICE, (payload) => ({
   payload,
 }));
 
-export const setDeposite = createAction(ActionType.SET_DEPOSITE, (payload) => ({
+const setDeposite = createAction(ActionType.SET_DEPOSITE, (payload) => ({
   payload,
 }));
 
-export const setDepositePercent = createAction(ActionType.SET_DEPOSITE_PERCENT, (payload) => ({
+const setDepositePercent = createAction(ActionType.SET_DEPOSITE_PERCENT, (payload) => ({
   payload,
 }));
 
-export const setPeriod = createAction(ActionType.SET_PERIOD, (payload) => ({
+const setPeriod = createAction(ActionType.SET_PERIOD, (payload) => ({
   payload,
 }));
 
-export const setMomCapital = createAction(ActionType.SET_MOM_CAPITAL, (payload) => ({
+const setMomCapital = createAction(ActionType.SET_MOM_CAPITAL, (payload) => ({
   payload,
 }));
 
-export const setCasco = createAction(ActionType.SET_CASCO, (payload) => ({
+const setCasco = createAction(ActionType.SET_CASCO, (payload) => ({
   payload,
 }));
 
-export const setInsurance = createAction(ActionType.SET_INSURANCE, (payload) => ({
+const setInsurance = createAction(ActionType.SET_INSURANCE, (payload) => ({
   payload,
 }));
 
-export const setIsRequestOpen = createAction(ActionType.SET_IS_REQUEST_OPEN, (payload) => ({
+const setIsRequestOpen = createAction(ActionType.SET_IS_REQUEST_OPEN, (payload) => ({
   payload,
 }));
 
-export const setNumberRequest = createAction(ActionType.SET_NUMBER_REQUEST, (payload) => ({
+const setNumberRequest = createAction(ActionType.SET_NUMBER_REQUEST, (payload) => ({
   payload,
 }));
 
-export const setForm = createAction(ActionType.SET_FORM, (payload) => ({
+const setForm = createAction(ActionType.SET_FORM, (payload) => ({
   payload,
 }));
 
-export const setUser = createAction(ActionType.SET_USER, (payload) => ({
+const setUser = createAction(ActionType.SET_USER, (payload) => ({
   payload,
 }));
 
-export const setIsIncorrectPrice = createAction(ActionType.SET_IS_INCORRECT_PRICE, (payload) => ({
+const setIsIncorrectPrice = createAction(ActionType.SET_IS_INCORRECT_PRICE, (payload) => ({
   payload,
 }));
 
-export const setIsModalOpen = createAction(ActionType.SET_IS_MODAL_OPEN, (payload) => ({
+const setIsModalOpen = createAction(ActionType.SET_IS_MODAL_OPEN, (payload) => ({
   payload,
 }));
 
-export const setIsLoginOpen = createAction(ActionType.SET_IS_LOGIN_OPEN, (payload) => ({
+const setIsLoginOpen = createAction(ActionType.SET_IS_LOGIN_OPEN, (payload) => ({
   payload,
 }));
 
-export const setIsFormValidate = createAction(ActionType.SET_IS_FORM_VALIDATE, (payload) => ({
+const setIsFormValidate = createAction(ActionType.SET_IS_FORM_VALIDATE, (payload) => ({
   payload,
 }));
 
-export const setIsVisiblePassword = createAction(ActionType.SET_IS_VISIBLE_PASSWORD, (payload) => ({
+const setIsVisiblePassword = createAction(ActionType.SET_IS_VISIBLE_PASSWORD, (payload) => ({
   payload,
 }));
+
+export {
+  setSelectedOption,
+  updatePrice,
+  setDeposite,
+  setDepositePercent,
+  setPeriod,
+  setMomCapital,
+  setCasco,
+  setInsurance,
+  setIsRequestOpen,
+  setNumberRequest,
+  setForm,
+  setUser,
+  setIsIncorrectPrice,
+  setIsModalOpen,
+  setIsLoginOpen,
+  setIsFormValidate,
+  setIsVisiblePassword
+};

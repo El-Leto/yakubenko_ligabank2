@@ -1,17 +1,37 @@
-export const getSelectedOption = (state) => state.selectedOption;
-export const getPrice = (state) => state.price;
-export const getDeposite = (state) => state.deposite;
-export const getDepositePercent = (state) => state.depositePercent;
-export const getPeriod = (state) => state.period;
-export const getMomCapital = (state) => state.momCapital;
-export const getCasco = (state) => state.casco;
-export const getInsurance = (state) => state.insurance;
-export const getIsRequestOpen = (state) => state.isRequestOpen;
-export const getNumberRequest = (state) => state.numberRequest;
-export const getForm = (state) => state.form;
-export const getUser = (state) => state.user;
-export const getIsIncorrectPrice = (state) => state.isIncorrectPrice;
-export const getIsModalOpen = (state) => state.isModalOpen;
-export const getIsLoginOpen = (state) => state.isLoginOpen;
-export const getIsFormValidate = (state) => state.formValidate;
-export const getIsVisiblePassword = (state) => state.isVisible;
+const getSelectedOption = (state) => state.selectedOption;
+const getPrice = (state) => state.price;
+const getDeposite = (state) => state.deposite;
+const getDepositePercent = (state) => state.depositePercent;
+const getPeriod = (state) => state.period;
+const getMomCapital = (state) => state.momCapital;
+const getCasco = (state) => state.casco;
+const getInsurance = (state) => state.insurance;
+const getIsRequestOpen = (state) => state.isRequestOpen;
+const getNumberRequest = (state) => state.numberRequest;
+const getForm = (state) => state.form;
+const getUser = (state) => state.user;
+const getIsIncorrectPrice = (state) => state.isIncorrectPrice;
+const getIsModalOpen = (state) => state.isModalOpen;
+const getIsLoginOpen = (state) => state.isLoginOpen;
+const getIsFormValidate = (state) => state.formValidate;
+const getIsVisiblePassword = (state) => state.isVisible;
+
+export {
+  getSelectedOption,
+  getPrice,
+  getDeposite,
+  getDepositePercent,
+  getPeriod,
+  getMomCapital,
+  getCasco,
+  getInsurance,
+  getIsRequestOpen,
+  getNumberRequest,
+  getForm,
+  getUser,
+  getIsIncorrectPrice,
+  getIsModalOpen,
+  getIsLoginOpen,
+  getIsFormValidate,
+  getIsVisiblePassword
+};

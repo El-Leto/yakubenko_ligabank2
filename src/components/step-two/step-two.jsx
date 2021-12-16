@@ -152,16 +152,16 @@ function StepTwo() {
   const handleButtonClick = (evt) => {
     const name = evt.target.name;
 
-    if ((price <= Credit[option].MIN && name === buttonsNames.MINUS) || (price >= Credit[option].MAX && name === buttonsNames.PLUS)) {
+    if ((price <= Credit[option].MIN && name === buttonsNames.minus) || (price >= Credit[option].MAX && name === buttonsNames.plus)) {
       return;
     }
 
-    if (name === buttonsNames.MINUS) {
+    if (name === buttonsNames.minus) {
       const newPrice = price - Credit[option].CREDIT_STEP;
       dispatch(updatePrice(newPrice));
     }
 
-    if (name === buttonsNames.PLUS) {
+    if (name === buttonsNames.plus) {
       const newPrice = price + Credit[option].CREDIT_STEP;
       dispatch(updatePrice(newPrice));
     }
@@ -188,7 +188,7 @@ function StepTwo() {
       </label>
       <button
         type="button"
-        name={buttonsNames.MINUS}
+        name={buttonsNames.minus}
         className={cn(styles.button, styles.button__minus)}
         onClick={handleButtonClick}
         aria-label="Уменьшить"
@@ -196,7 +196,7 @@ function StepTwo() {
       </button>
       <button
         type="button"
-        name={buttonsNames.PLUS}
+        name={buttonsNames.plus}
         onClick={handleButtonClick}
         className={cn(styles.button, styles.button__plus)}
         aria-label="Увеличить"

@@ -1,4 +1,4 @@
-import { Credit, MONEY_ENDING, PERIOD_ENDING, MAX_PERCENT_FOR_INCOME, MOM_CAPITAL } from './const';
+import { Credit, MONEY_ENDINGS, PERIOD_ENDINGS, MAX_PERCENT_FOR_INCOME, MOM_CAPITAL } from './const';
 
 const getId = () => Math.random().toString(36).slice(2);
 
@@ -15,8 +15,8 @@ const numWord = (value, words) => {
   return words[2];
 };
 
-const getPriceString = (number) => `${divideNumberByPieces(number)} ${numWord(number, MONEY_ENDING)}`;
-const getPeriodString = (number) => `${getNumber(number)} ${numWord(number, PERIOD_ENDING)}`;
+const getPriceString = (number) => `${divideNumberByPieces(number)} ${numWord(number, MONEY_ENDINGS)}`;
+const getPeriodString = (number) => `${getNumber(number)} ${numWord(number, PERIOD_ENDINGS)}`;
 
 const totalPrice = (price, deposite, momCapital) => momCapital ? price - deposite - MOM_CAPITAL : price - deposite;
 

@@ -54,12 +54,12 @@ const SelectOption = {
   CAR: 'car',
 };
 
-const MONEY_ENDING = ['рубль', 'рубля', 'рублей'];
-const PERIOD_ENDING = ['год', 'года', 'лет'];
+const MONEY_ENDINGS = ['рубль', 'рубля', 'рублей'];
+const PERIOD_ENDINGS = ['год', 'года', 'лет'];
 const MOM_CAPITAL = 470000;
 const buttonsNames = {
-  MINUS: 'minus',
-  PLUS: 'plus',
+  minus: 'minus',
+  plus: 'plus',
 };
 
 const tabs = [
@@ -113,8 +113,8 @@ const InputsName = {
 export {
   Credit,
   tabs,
-  MONEY_ENDING,
-  PERIOD_ENDING,
+  MONEY_ENDINGS,
+  PERIOD_ENDINGS,
   MAX_PERCENT_FOR_INCOME,
   MOM_CAPITAL,
   buttonsNames,

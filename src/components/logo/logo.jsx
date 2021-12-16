@@ -14,7 +14,7 @@ function Logo({ isfooter}) {
 }
 
 Logo.propTypes = {
-  isfooter: PropTypes.bool.isRequired,
+  isfooter: PropTypes.bool,
 
 };
 
